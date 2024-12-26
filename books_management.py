@@ -94,5 +94,14 @@ class Library:
         """Ensures that the books are saved when the library object is deleted."""
         self.save_books()
         
+def main():
+    libray = Library()
+    while True:
+        print("\nWelcome to the Library Management System")
+        print("1. Add a book to the library")
+        print("2. Display all books in the library")
+        print("3. Borrow a book")
+        print("4. Return a book")
+        print("5. Exit")
                     
     
