@@ -44,5 +44,10 @@ class Library:
         except FileNotFoundError:
             self.books = [] # If the file does not exist, create an empty list of books
         
+    def save_books(self):
+        """Saves the books to the json file."""
+        with open(self.json_file_name, "w") as file:
+            books = [book.to_dict() for book in self.books]
+            json.dump(books, file)
     
         
