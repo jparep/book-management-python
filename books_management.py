@@ -22,5 +22,11 @@ class Book:
             "author": self.author,
             "is_borrowed": self.is_borrowed
         }
-            
+        
+    @staticmethod
+    def from_dict(book_dict):
+        """Creates a book object from a dictionary."""
+        return Book(book_dict["book_id"], book_dict["title"], book_dict["author"], book_dict["is_borrowed"])
+    
+      
         
