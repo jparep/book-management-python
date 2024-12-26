@@ -68,5 +68,27 @@ class Library:
             for book in self.books:
                 book.display_book()
         
+    def borrow_book(self, book_id):
+        for book in self.books:
+            if book.book_id == book_id:
+                if not book.is_borrowed:
+                    book.is_borrowed = True
+                    print(f"You have borrowed the book with ID {book_id}.")
+                else:
+                    print(f"Sorry, the book with ID {book_id} is already borrowed.")
+                return
+        print(f"Sorry, the book with ID {book_id} is not available.")
+    
+    def return_book(self, book_id):
+        """Returns a borrowed book to the library."""
+        for book in self.books:
+            if book.book_id  == book_id:
+                if book.is_borrowed:
+                    book.is_boorrowed = False
+                    print(f"You have returned the book with ID {book_id}.")
+                else:
+                    print(f"Sorry, the book with ID {book_id} was not borrowed.")
+        print(f"Sorry, the book with ID {book_id} is not available.")
         
-        
+                    
+    
