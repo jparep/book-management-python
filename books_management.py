@@ -9,7 +9,7 @@ class Book:
         self.author = author
         self.is_borrowed = is_borrowed
     
-    def display_book(self):
+    def display(self):
         """Displays the details of a book."""
         status = "Borrowed" if self.is_borrowed else "Available"
         print(f"Book ID: {self.book_id} | Title: {self.title} | Author: {self.author} | Status: {status}")
