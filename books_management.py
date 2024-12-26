@@ -103,5 +103,14 @@ def main():
         print("3. Borrow a book")
         print("4. Return a book")
         print("5. Exit")
-                    
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            book_id = input("Enter the book ID:")
+            title = input("Enter the title of the book: ")
+            author = input("Enter the author of the book: ")
+            libray.add_book(Book(book_id, title, author))
+        elif choice == "2":
+            
+        
     
