@@ -29,6 +29,8 @@ class Book:
         return Book(book_dict["book_id"], book_dict["title"], book_dict["author"], book_dict["is_borrowed"])
     
 class Library:
-    def __init__(self):
-        pass 
+    def __init__(self, json_file_name="books.json"):
+        self.json_file_name = json_file_name
+        self.books = []
+        self.load_books()
         
