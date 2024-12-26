@@ -52,6 +52,9 @@ class Library:
     
     def add_book(self, book):
         """Adds a book to the library."""
+        if any(b.book_id == book.book_id for b in self.books):
+            print(f"Book with ID {book.book_id} already exists in the library.")
+            return
         self.books.append(book)
         self.save_books()
         print(f"Book with ID {book.book_id} has been added to the library.")
