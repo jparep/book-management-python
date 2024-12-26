@@ -90,5 +90,9 @@ class Library:
                     print(f"Sorry, the book with ID {book_id} was not borrowed.")
         print(f"Sorry, the book with ID {book_id} is not available.")
         
+    def __del__(self):
+        """Ensures that the books are saved when the library object is deleted."""
+        self.save_books()
+        
                     
     
