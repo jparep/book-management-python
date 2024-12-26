@@ -111,6 +111,9 @@ def main():
             author = input("Enter the author of the book: ")
             libray.add_book(Book(book_id, title, author))
         elif choice == "2":
-            
-        
+            libray.display_books()
+        elif choice == "3":
+            book_id = input("Enter the book ID to borrow: ")
+            libray.borrow_book(book_id)
+        elif choice == "4":
     
