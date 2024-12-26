@@ -33,4 +33,16 @@ class Library:
         self.json_file_name = json_file_name
         self.books = []
         self.load_books()
+    
+    def load_books(self):
+        """Loads the books from the json file."""
+        try:
+            with open(self.json_file_name, "r") as file:
+                books = json.load(file)
+                for book in books:
+                    self.books.append(Book.from_dict(book))
+        except FileNotFoundError:
+            self.books = [] # If the file does not exist, create an empty list of books
+        
+    
         
