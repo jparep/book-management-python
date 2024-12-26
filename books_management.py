@@ -14,4 +14,13 @@ class Book:
         status = "Borrowed" if self.is_borrowed else "Available"
         print(f"Book ID: {self.book_id} | Title: {self.title} | Author: {self.author} | Status: {status}")
         
+    def to_dict(self):
+        """Converts the book details to a dictionary."""
+        return {
+            "book_id": self.book_id,
+            "title": self.title,
+            "author": self.author,
+            "is_borrowed": self.is_borrowed
+        }
+            
         
