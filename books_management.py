@@ -67,6 +67,10 @@ class Library:
 
         for book in self.books:
             book.display_book()
+            
+    def find_books(self, book_id):
+        """"Find a books by its ID."""
+        return next((book for book in self.books if book.book_id == book_id), None)
         
     def borrow_book(self, book_id):
         for book in self.books:
