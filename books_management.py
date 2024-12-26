@@ -31,19 +31,17 @@ class Book:
 class Library:
     """"Mages a collection of books."""
     
-    def __init__(self, json_file_name="books.json"):
-        self.json_file_name = json_file_name
+    def __init__(self, file_name="books.json"):
+        self.file_name = file_name
         self.books = []
         self.load_books()
     
     def load_books(self):
         """Loads the books from the json file."""
         try:
-            with open(self.json_file_name, "r") as file:
-                books = json.load(file)
-                for book in books:
-                    self.books.append(Book.from_dict(book))
-        except FileNotFoundError:
+            with open(self.file_name, "r") as file:
+                self.books = [Book.from_dict(book) for book in json.load(file)]
+        except (FileNotFoundError, json.JSONDecodeError):
             self.books = [] # If the file does not exist, create an empty list of books
         
     def save_books(self):
