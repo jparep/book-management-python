@@ -116,4 +116,12 @@ def main():
             book_id = input("Enter the book ID to borrow: ")
             libray.borrow_book(book_id)
         elif choice == "4":
-    
+            book_id = input("Enter the book ID to return: ")
+            libray.return_book(book_id)
+        elif choice == "5":
+            print("Exiting the Library Management System.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+if __name__=="__main__":
+    main()
