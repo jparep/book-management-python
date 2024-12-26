@@ -20,7 +20,7 @@ class Book:
             "book_id": self.book_id,
             "title": self.title,
             "author": self.author,
-            "is_borrowed": self.is_borrowed
+            "is_borrowed": self.is_borrowed,
         }
         
     @staticmethod
@@ -29,6 +29,8 @@ class Book:
         return Book(book_dict["book_id"], book_dict["title"], book_dict["author"], book_dict["is_borrowed"])
     
 class Library:
+    """"Mages a collection of books."""
+    
     def __init__(self, json_file_name="books.json"):
         self.json_file_name = json_file_name
         self.books = []
