@@ -61,15 +61,12 @@ class Library:
         
     def display_books(self):
         """Displays the details of all the books in the library."""
-        if len(self.books) == 0:
+        if not self.books:
             print("There are no books in the library.")
             return
-        elif not self.books:
-            print("There is no books in the library.")
-            return
-        else:
-            for book in self.books:
-                book.display_book()
+
+        for book in self.books:
+            book.display_book()
         
     def borrow_book(self, book_id):
         for book in self.books:
