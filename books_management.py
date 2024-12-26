@@ -9,7 +9,7 @@ class Book:
         self.author = author
         self.is_borrowed = is_borrowed
     
-    def displayBook(self):
+    def display_book(self):
         """Displays the details of a book."""
         status = "Borrowed" if self.is_borrowed else "Available"
         print(f"Book ID: {self.book_id} | Title: {self.title} | Author: {self.author} | Status: {status}")
@@ -49,5 +49,12 @@ class Library:
         with open(self.json_file_name, "w") as file:
             books = [book.to_dict() for book in self.books]
             json.dump(books, file)
+    
+    def add_book(self, book):
+        """Adds a book to the library."""
+        self.books.append(book)
+        self.save_books()
+        print(f"Book with ID {book.book_id} has been added to the library.")
+        
     
         
