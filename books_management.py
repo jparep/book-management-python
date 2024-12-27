@@ -104,7 +104,7 @@ class Library:
         self.save_books()
         
 def main():
-    libray = Library()
+    library = Library()
     while True:
         print("\nWelcome to the Library Management System")
         print("1. Add a book to the library")
@@ -115,10 +115,14 @@ def main():
         choice = input("Enter your choice: ")
         
         if choice == "1":
-            book_id = input("Enter the book ID:")
-            title = input("Enter the title of the book: ")
-            author = input("Enter the author of the book: ")
-            libray.add_book(Book(book_id, title, author))
+            try:
+                book_id = int(input("Enter Book ID: "))
+                title = input("Enter Book Title: ")
+                author = input("Enter Book Author: ")
+                library.add_book(Book(book_id, title, author))
+            except ValueError:
+                print("Invalid input. Book ID must be a number.")
+                
         elif choice == "2":
             libray.display_books()
         elif choice == "3":
