@@ -134,8 +134,12 @@ def main():
                 print("Invalid input. Book ID must be a number.")
                 
         elif choice == "4":
-            book_id = input("Enter the book ID to return: ")
-            libray.return_book(book_id)
+            try:
+                book_id = int(input("Enter Book ID to return: "))
+                library.return_book(book_id)
+            except ValueError:
+                print("Invalid input. Book ID must be a number.")
+        elif choice == "5":
             
         elif choice == "5":
             print("Exiting the Library Management System.")
