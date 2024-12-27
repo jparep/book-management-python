@@ -1,0 +1,29 @@
+# .gitignore file for Library Management System
+
+# Ignore the JSON file used for storing books
+books.json
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+.env
+
+# Ignore IDE configuration files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+.DS_Store
+
+# Ignore virtual environment
+venv/
+*.env/
+
+# Ignore Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
