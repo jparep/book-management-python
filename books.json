@@ -1,0 +1,8 @@
+[
+    {
+        "book_id": 1,
+        "title": "Test title",
+        "author": "JP",
+        "is_borrowed": false
+    }
+]
