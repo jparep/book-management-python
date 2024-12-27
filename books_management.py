@@ -124,7 +124,7 @@ def main():
                 print("Invalid input. Book ID must be a number.")
                 
         elif choice == "2":
-            libray.display_books()
+            library.display_books()
         elif choice == "3":
             book_id = input("Enter the book ID to borrow: ")
             libray.borrow_book(book_id)
