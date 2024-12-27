@@ -125,12 +125,18 @@ def main():
                 
         elif choice == "2":
             library.display_books()
+            
         elif choice == "3":
-            book_id = input("Enter the book ID to borrow: ")
-            libray.borrow_book(book_id)
+            try:
+                book_id = int(input("Enter Book ID to borrow: "))
+                library.borrow_book(book_id)
+            except ValueError:
+                print("Invalid input. Book ID must be a number.")
+                
         elif choice == "4":
             book_id = input("Enter the book ID to return: ")
             libray.return_book(book_id)
+            
         elif choice == "5":
             print("Exiting the Library Management System.")
             break
