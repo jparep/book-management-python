@@ -73,15 +73,17 @@ class Library:
         return next((book for book in self.books if book.book_id == book_id), None)
         
     def borrow_book(self, book_id):
-        for book in self.books:
-            if book.book_id == book_id:
-                if not book.is_borrowed:
-                    book.is_borrowed = True
-                    print(f"You have borrowed the book with ID {book_id}.")
-                else:
-                    print(f"Sorry, the book with ID {book_id} is already borrowed.")
-                return
-        print(f"Sorry, the book with ID {book_id} is not available.")
+        """Marks a book as borrowed of it is available."""
+        book = self.find_book(book_id)
+        if book:
+            if book.is_borrowed:
+                book.is_borrowed = True
+                self.save_books()
+                print(f"You have successfuly borrowed the book with title {book.title}.")
+            else:
+                print(f"Sorry, the book with title {book.title} is not available.")
+        else:
+            print(f"Sorry, the book with ID {book_id} is not available.")
     
     def return_book(self, book_id):
         """Returns a borrowed book to the library."""
